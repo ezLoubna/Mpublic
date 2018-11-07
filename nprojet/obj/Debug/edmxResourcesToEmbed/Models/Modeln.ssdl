@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Assurance">
+    <Key>
+      <PropertyRef Name="AssuranceId" />
+    </Key>
+    <Property Name="AssuranceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Audience">
+    <Key>
+      <PropertyRef Name="AudienceId" />
+    </Key>
+    <Property Name="AudienceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnneeAudience" Type="date" Nullable="false" />
+    <Property Name="DecisionId" Type="int" Nullable="false" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AvocatAssistant">
+    <Key>
+      <PropertyRef Name="AvocatAssistantId" />
+    </Key>
+    <Property Name="AvocatAssistantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AvocatAssurance">
+    <Key>
+      <PropertyRef Name="AssuranceId" />
+    </Key>
+    <Property Name="AssuranceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AvocatCoh">
+    <Key>
+      <PropertyRef Name="AvocatCohId" />
+    </Key>
+    <Property Name="AvocatCohId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AvocatMembre">
+    <Key>
+      <PropertyRef Name="AvocatMembreId" />
+    </Key>
+    <Property Name="AvocatMembreId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NominationId" Type="int" Nullable="false" />
+    <Property Name="AnneeMembre" Type="date" Nullable="false" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AvocatPar">
+    <Key>
+      <PropertyRef Name="AvocatParId" />
+    </Key>
+    <Property Name="AvocatParId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Barreau">
+    <Key>
+      <PropertyRef Name="BarreauId" />
+    </Key>
+    <Property Name="BarreauId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="CategorieId" />
+    </Key>
+    <Property Name="CategorieId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatSanction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CoordonneesProfessionnelles">
+    <Key>
+      <PropertyRef Name="CoordonneId" />
+    </Key>
+    <Property Name="CoordonneId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BarreauId" Type="int" Nullable="false" />
+    <Property Name="ReferenceNational" Type="bigint" />
+    <Property Name="OrganeId" Type="int" Nullable="false" />
+    <Property Name="SituationPId" Type="int" Nullable="false" />
+    <Property Name="AnneeDA" Type="date" />
+    <Property Name="AnneeAY" Type="date" />
+    <Property Name="CourCassationId" Type="int" Nullable="false" />
+    <Property Name="AnneeACC" Type="date" />
+    <Property Name="StatutAHId" Type="int" Nullable="false" />
+    <Property Name="AnneeSt" Type="date" />
+    <Property Name="AnneeRSt" Type="date" />
+    <Property Name="StatutCapitaineId" Type="int" Nullable="false" />
+    <Property Name="AnneeCapitaine" Type="date" />
+    <Property Name="AnneeFinSt" Type="date" />
+    <Property Name="AvocatAssistantId" Type="int" Nullable="false" />
+    <Property Name="NomAvocatAss" Type="bigint" />
+    <Property Name="AvocatParId" Type="int" Nullable="false" />
+    <Property Name="NomAvocatPar" Type="bigint" />
+    <Property Name="AvocatCohId" Type="int" Nullable="false" />
+    <Property Name="NomAvocatCoh" Type="bigint" />
+    <Property Name="AssuranceId" Type="int" Nullable="false" />
+    <Property Name="NomSociete" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NomAvocatAssurance" Type="bigint" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourCassation">
+    <Key>
+      <PropertyRef Name="CourCassationId" />
+    </Key>
+    <Property Name="CourCassationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Decision">
+    <Key>
+      <PropertyRef Name="DecisionId" />
+    </Key>
+    <Property Name="DecisionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreId" />
+    </Key>
+    <Property Name="GenreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jugement">
+    <Key>
+      <PropertyRef Name="JugementId" />
+    </Key>
+    <Property Name="JugementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Jugementt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateJugement" Type="date" Nullable="false" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Juridiction">
+    <Key>
+      <PropertyRef Name="JuridictionId" />
+    </Key>
+    <Property Name="JuridictionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrganeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Metier">
+    <Key>
+      <PropertyRef Name="MetierId" />
+    </Key>
+    <Property Name="MetierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nationalite">
+    <Key>
+      <PropertyRef Name="NationaliteId" />
+    </Key>
+    <Property Name="NationaliteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nomination">
+    <Key>
+      <PropertyRef Name="NominationId" />
+    </Key>
+    <Property Name="NominationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Obtention">
+    <Key>
+      <PropertyRef Name="ObtentionId" />
+    </Key>
+    <Property Name="ObtentionId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+    <Property Name="CategorieId" Type="bigint" Nullable="false" />
+    <Property Name="SpecialiteId" Type="bigint" Nullable="false" />
+    <Property Name="Annee" Type="date" />
+  </EntityType>
+  <EntityType Name="Partie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateNaissance" Type="date" />
+    <Property Name="LieuNaissance" Type="nvarchar(max)" />
+    <Property Name="Cin" Type="nvarchar(max)" />
+    <Property Name="Adresse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GenreId" Type="int" Nullable="false" />
+    <Property Name="NationaliteId" Type="int" Nullable="false" />
+    <Property Name="VilleId" Type="int" Nullable="false" />
+    <Property Name="MetierId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PoursuiteJuridique">
+    <Key>
+      <PropertyRef Name="PoursuiteJuridiqueId" />
+    </Key>
+    <Property Name="PoursuiteJuridiqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeroPole" Type="bigint" Nullable="false" />
+    <Property Name="JuridictionId" Type="int" Nullable="false" />
+    <Property Name="NumeroDossier" Type="bigint" Nullable="false" />
+    <Property Name="Accusation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ChaitreSuivi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sanction">
+    <Key>
+      <PropertyRef Name="SanctionId" />
+    </Key>
+    <Property Name="SanctionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateSanction" Type="date" Nullable="false" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SituationP">
+    <Key>
+      <PropertyRef Name="SituationPId" />
+    </Key>
+    <Property Name="SituationPId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Specialite">
+    <Key>
+      <PropertyRef Name="SpecialiteId" />
+    </Key>
+    <Property Name="SpecialiteId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stage">
+    <Key>
+      <PropertyRef Name="StageId" />
+    </Key>
+    <Property Name="StageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnneeDebut" Type="date" Nullable="false" />
+    <Property Name="AnneeArret" Type="date" Nullable="false" />
+    <Property Name="AnneeReprendre" Type="date" Nullable="false" />
+    <Property Name="AnneFin" Type="date" Nullable="false" />
+    <Property Name="AnneeSupp" Type="date" Nullable="false" />
+    <Property Name="AvocatStageId" Type="bigint" />
+    <Property Name="PartieId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatutAH">
+    <Key>
+      <PropertyRef Name="StatutAHId" />
+    </Key>
+    <Property Name="StatutAHId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatutCapitaine">
+    <Key>
+      <PropertyRef Name="StatutCapitaineId" />
+    </Key>
+    <Property Name="StatutCapitaineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="SituationPId" />
+    </Key>
+    <Property Name="SituationPId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ville">
+    <Key>
+      <PropertyRef Name="VilleId" />
+    </Key>
+    <Property Name="VilleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ah">
+    <End Role="StatutAH" Type="Self.StatutAH" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatutAH">
+        <PropertyRef Name="StatutAHId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="StatutAHId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_assist">
+    <End Role="AvocatAssistant" Type="Self.AvocatAssistant" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AvocatAssistant">
+        <PropertyRef Name="AvocatAssistantId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="AvocatAssistantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_assurance">
+    <End Role="Assurance" Type="Self.Assurance" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assurance">
+        <PropertyRef Name="AssuranceId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="AssuranceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AudiENCEDec">
+    <End Role="Decision" Type="Self.Decision" Multiplicity="1" />
+    <End Role="Audience" Type="Self.Audience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Decision">
+        <PropertyRef Name="DecisionId" />
+      </Principal>
+      <Dependent Role="Audience">
+        <PropertyRef Name="DecisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AudiENCEPar">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="Audience" Type="Self.Audience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audience">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_barr">
+    <End Role="Barreau" Type="Self.Barreau" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barreau">
+        <PropertyRef Name="BarreauId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="BarreauId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cap">
+    <End Role="StatutCapitaine" Type="Self.StatutCapitaine" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatutCapitaine">
+        <PropertyRef Name="StatutCapitaineId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="StatutCapitaineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cass">
+    <End Role="CourCassation" Type="Self.CourCassation" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourCassation">
+        <PropertyRef Name="CourCassationId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="CourCassationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Categorie">
+    <End Role="Categorie" Type="Self.Categorie" Multiplicity="1" />
+    <End Role="Obtention" Type="Self.Obtention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorie">
+        <PropertyRef Name="CategorieId" />
+      </Principal>
+      <Dependent Role="Obtention">
+        <PropertyRef Name="CategorieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_coh">
+    <End Role="AvocatCoh" Type="Self.AvocatCoh" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AvocatCoh">
+        <PropertyRef Name="AvocatCohId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="AvocatCohId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_genre">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+    <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="GenreId" />
+      </Principal>
+      <Dependent Role="Partie">
+        <PropertyRef Name="GenreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jugement_Partie">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="Jugement" Type="Self.Jugement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jugement">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_metier">
+    <End Role="Metier" Type="Self.Metier" Multiplicity="1" />
+    <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Metier">
+        <PropertyRef Name="MetierId" />
+      </Principal>
+      <Dependent Role="Partie">
+        <PropertyRef Name="MetierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nationalite">
+    <End Role="Nationalite" Type="Self.Nationalite" Multiplicity="1" />
+    <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nationalite">
+        <PropertyRef Name="NationaliteId" />
+      </Principal>
+      <Dependent Role="Partie">
+        <PropertyRef Name="NationaliteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Nomination">
+    <End Role="Nomination" Type="Self.Nomination" Multiplicity="1" />
+    <End Role="AvocatMembre" Type="Self.AvocatMembre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomination">
+        <PropertyRef Name="NominationId" />
+      </Principal>
+      <Dependent Role="AvocatMembre">
+        <PropertyRef Name="NominationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_organ">
+    <End Role="Juridiction" Type="Self.Juridiction" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Juridiction">
+        <PropertyRef Name="JuridictionId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="OrganeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_par">
+    <End Role="AvocatPar" Type="Self.AvocatPar" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AvocatPar">
+        <PropertyRef Name="AvocatParId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="AvocatParId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Partie">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="Obtention" Type="Self.Obtention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Obtention">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_partieC">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_partieCassistant">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="0..1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="NomAvocatAss" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_partieCassurance">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="0..1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="NomAvocatAssurance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_partieCcohabitation">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="0..1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="NomAvocatCoh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_partieCparticipant">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="0..1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="NomAvocatPar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartieM">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="AvocatMembre" Type="Self.AvocatMembre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AvocatMembre">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartieS">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="Stage" Type="Self.Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stage">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartieSA">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="0..1" />
+    <End Role="Stage" Type="Self.Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stage">
+        <PropertyRef Name="AvocatStageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PoursuiteJur">
+    <End Role="Juridiction" Type="Self.Juridiction" Multiplicity="1" />
+    <End Role="PoursuiteJuridique" Type="Self.PoursuiteJuridique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Juridiction">
+        <PropertyRef Name="JuridictionId" />
+      </Principal>
+      <Dependent Role="PoursuiteJuridique">
+        <PropertyRef Name="JuridictionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PoursuitePartie">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="PoursuiteJuridique" Type="Self.PoursuiteJuridique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PoursuiteJuridique">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sanction">
+    <End Role="CatSanction" Type="Self.CatSanction" Multiplicity="1" />
+    <End Role="Sanction" Type="Self.Sanction" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CatSanction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sanction">
+        <PropertyRef Name="SanctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sanction_partie">
+    <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+    <End Role="Sanction" Type="Self.Sanction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sanction">
+        <PropertyRef Name="PartieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sit">
+    <End Role="SituationP" Type="Self.SituationP" Multiplicity="1" />
+    <End Role="CoordonneesProfessionnelles" Type="Self.CoordonneesProfessionnelles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SituationP">
+        <PropertyRef Name="SituationPId" />
+      </Principal>
+      <Dependent Role="CoordonneesProfessionnelles">
+        <PropertyRef Name="SituationPId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specialite">
+    <End Role="Specialite" Type="Self.Specialite" Multiplicity="1" />
+    <End Role="Obtention" Type="Self.Obtention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialite">
+        <PropertyRef Name="SpecialiteId" />
+      </Principal>
+      <Dependent Role="Obtention">
+        <PropertyRef Name="SpecialiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ville">
+    <End Role="Ville" Type="Self.Ville" Multiplicity="1" />
+    <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ville">
+        <PropertyRef Name="VilleId" />
+      </Principal>
+      <Dependent Role="Partie">
+        <PropertyRef Name="VilleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="Assurance" EntityType="Self.Assurance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Audience" EntityType="Self.Audience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvocatAssistant" EntityType="Self.AvocatAssistant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvocatAssurance" EntityType="Self.AvocatAssurance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvocatCoh" EntityType="Self.AvocatCoh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvocatMembre" EntityType="Self.AvocatMembre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvocatPar" EntityType="Self.AvocatPar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Barreau" EntityType="Self.Barreau" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatSanction" EntityType="Self.CatSanction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoordonneesProfessionnelles" EntityType="Self.CoordonneesProfessionnelles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourCassation" EntityType="Self.CourCassation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Decision" EntityType="Self.Decision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jugement" EntityType="Self.Jugement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Juridiction" EntityType="Self.Juridiction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Metier" EntityType="Self.Metier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nationalite" EntityType="Self.Nationalite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nomination" EntityType="Self.Nomination" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Obtention" EntityType="Self.Obtention" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partie" EntityType="Self.Partie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PoursuiteJuridique" EntityType="Self.PoursuiteJuridique" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sanction" EntityType="Self.Sanction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SituationP" EntityType="Self.SituationP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specialite" EntityType="Self.Specialite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stage" EntityType="Self.Stage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatutAH" EntityType="Self.StatutAH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatutCapitaine" EntityType="Self.StatutCapitaine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ville" EntityType="Self.Ville" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ah" Association="Self.FK_ah">
+      <End Role="StatutAH" EntitySet="StatutAH" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_assist" Association="Self.FK_assist">
+      <End Role="AvocatAssistant" EntitySet="AvocatAssistant" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_assurance" Association="Self.FK_assurance">
+      <End Role="Assurance" EntitySet="Assurance" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AudiENCEDec" Association="Self.FK_AudiENCEDec">
+      <End Role="Decision" EntitySet="Decision" />
+      <End Role="Audience" EntitySet="Audience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AudiENCEPar" Association="Self.FK_AudiENCEPar">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="Audience" EntitySet="Audience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_barr" Association="Self.FK_barr">
+      <End Role="Barreau" EntitySet="Barreau" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cap" Association="Self.FK_cap">
+      <End Role="StatutCapitaine" EntitySet="StatutCapitaine" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cass" Association="Self.FK_cass">
+      <End Role="CourCassation" EntitySet="CourCassation" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Categorie" Association="Self.FK_Categorie">
+      <End Role="Categorie" EntitySet="Categorie" />
+      <End Role="Obtention" EntitySet="Obtention" />
+    </AssociationSet>
+    <AssociationSet Name="FK_coh" Association="Self.FK_coh">
+      <End Role="AvocatCoh" EntitySet="AvocatCoh" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_genre" Association="Self.FK_genre">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="Partie" EntitySet="Partie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jugement_Partie" Association="Self.FK_Jugement_Partie">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="Jugement" EntitySet="Jugement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_metier" Association="Self.FK_metier">
+      <End Role="Metier" EntitySet="Metier" />
+      <End Role="Partie" EntitySet="Partie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nationalite" Association="Self.FK_nationalite">
+      <End Role="Nationalite" EntitySet="Nationalite" />
+      <End Role="Partie" EntitySet="Partie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Nomination" Association="Self.FK_Nomination">
+      <End Role="Nomination" EntitySet="Nomination" />
+      <End Role="AvocatMembre" EntitySet="AvocatMembre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_organ" Association="Self.FK_organ">
+      <End Role="Juridiction" EntitySet="Juridiction" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_par" Association="Self.FK_par">
+      <End Role="AvocatPar" EntitySet="AvocatPar" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Partie" Association="Self.FK_Partie">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="Obtention" EntitySet="Obtention" />
+    </AssociationSet>
+    <AssociationSet Name="FK_partieC" Association="Self.FK_partieC">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_partieCassistant" Association="Self.FK_partieCassistant">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_partieCassurance" Association="Self.FK_partieCassurance">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_partieCcohabitation" Association="Self.FK_partieCcohabitation">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_partieCparticipant" Association="Self.FK_partieCparticipant">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartieM" Association="Self.FK_PartieM">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="AvocatMembre" EntitySet="AvocatMembre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartieS" Association="Self.FK_PartieS">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="Stage" EntitySet="Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartieSA" Association="Self.FK_PartieSA">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="Stage" EntitySet="Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoursuiteJur" Association="Self.FK_PoursuiteJur">
+      <End Role="Juridiction" EntitySet="Juridiction" />
+      <End Role="PoursuiteJuridique" EntitySet="PoursuiteJuridique" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoursuitePartie" Association="Self.FK_PoursuitePartie">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="PoursuiteJuridique" EntitySet="PoursuiteJuridique" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sanction" Association="Self.FK_Sanction">
+      <End Role="CatSanction" EntitySet="CatSanction" />
+      <End Role="Sanction" EntitySet="Sanction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sanction_partie" Association="Self.FK_Sanction_partie">
+      <End Role="Partie" EntitySet="Partie" />
+      <End Role="Sanction" EntitySet="Sanction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sit" Association="Self.FK_sit">
+      <End Role="SituationP" EntitySet="SituationP" />
+      <End Role="CoordonneesProfessionnelles" EntitySet="CoordonneesProfessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specialite" Association="Self.FK_Specialite">
+      <End Role="Specialite" EntitySet="Specialite" />
+      <End Role="Obtention" EntitySet="Obtention" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ville" Association="Self.FK_ville">
+      <End Role="Ville" EntitySet="Ville" />
+      <End Role="Partie" EntitySet="Partie" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

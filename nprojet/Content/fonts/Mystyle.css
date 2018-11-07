@@ -1,0 +1,127 @@
+﻿
+
+.navbar-default {
+    background-color: cornflowerblue;
+    border-color: #e7e7e7;
+    height: 90px;
+    padding-top: 10px;
+}
+
+    .navbar-default .navbar-nav > li > a {
+        
+        font-size: 18px;
+        font-style: italic;
+        font-weight: lighter;
+        color: white;
+    }
+        .navbar-default .navbar-nav > li > a > i {
+            padding: 8px;
+         
+        }
+.form-control .navbar-default .navbar-nav > li > a > input {
+    padding: 20px 60px;
+    
+}
+
+
+
+
+        .navbar-default .navbar-nav > li > a:hover {
+            color: darkblue;
+        }
+.navbar-default .navbar-collapse {
+    background-color: cornflowerblue;
+    margin-top: -60px;
+}
+
+#imag {
+    margin-top: -15px;
+    
+    width: 60px;
+    height: 75px;
+    
+}
+
+[type="date"] {
+    background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+}
+
+    [type="date"]::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    [type="date"]::-webkit-calendar-picker-indicator {
+        opacity: 0;
+    }
+
+.navbar-default .navbar-nav .form-control {
+    width: 200px;
+}
+.myfooter {
+    padding: 10px;
+   
+}
+.subfooter {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+}
+.ss {
+    margin-top: 200px;
+    margin-right: 400px;
+    color: cornflowerblue;
+    font-size:40px;
+}
+#demo{
+    margin-top:100px;
+    font-size:20px;
+   
+   
+    
+    color:cornflowerblue;
+  
+
+
+}
+#perr {
+    margin-top: 200px;
+    color: cornflowerblue;
+}
+
+#perr {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #perr td, #perr th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align:center;
+    }
+
+    #perr tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #perr tr:hover {
+        background-color: #ddd;
+    }
+
+    #perr th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: honeydew;
+        color: darkslategrey;
+    }
+    #tbl{width:100%;}
+    #lbl{
+        font-size:40px;
+        color:black;
+        font-family:'Arabic Typesetting';
+    }
+
+

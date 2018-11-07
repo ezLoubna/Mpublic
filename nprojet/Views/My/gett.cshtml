@@ -1,0 +1,438 @@
+﻿
+@{
+    ViewBag.Title = "gett";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<head>
+
+
+
+</head>
+
+<body ng-app="Homeapp">
+    <div ng-controller='HomeController'>
+
+
+        <table id="perr" style="width:100%" ng-show="!(showme)" ng-if="fil">
+            <tr>
+                <th>الاسم العائلي</th>
+                <th>الاسم الشخصي</th>
+                <th>رقم البطاقة الوطنية</th>
+                <th>مسح</th>
+                <th>عرض</th>
+
+            </tr>
+            <tr ng-repeat="x in g | filter : fil ">
+                <td>{{ x.Nom }}</td>
+                <td>{{ x.Prenom }}</td>
+
+                <td>{{ x.Cin }}</td>
+
+                <td><button  type="submit" class="btn btn-primary" ng-click="delete(x)">مسح</button></td>
+                <td><button type="submit" class="btn btn-primary" ng-click="Updatep(x)">عرض</button></td>
+
+
+
+            </tr>
+
+        </table>
+    
+        <div id="demo" ng-show="showme">
+            <div class="panel panel-primary">
+                <div class="panel-heading">المعطيات الشخصية:</div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+                            <td>الاسم العائلي :</td>
+                            <td> <input class="form-control" ng-model="Nom"></td>
+                            <td>
+                                الاسم الشخصي:
+                            </td>
+                            <td> <input  class="form-control" ng-model="Prenom"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                تاريخ الازدياد:
+                            </td>
+                            <td> <input class="form-control"  ng-model="DateNaissance"></td>
+                            <td>
+                                مكان الازدياد:
+                            </td>
+                            <td><input class="form-control"  ng-model="LieuNaissance"></td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td>
+                                الجنس:
+                            </td>
+                            <td> <select class="form-control"  ng-model="Genrr" ng-options=" x as x.libelle for x in Genre track by x.GenreId"></select></td>
+                            <td>رقم البطاقة الوطنية :</td>
+                            <td>  <input class="form-control"  ng-model="Cin"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                الجنسية:
+                            </td>
+                            <td>  <select class="form-control"   ng-model="Natt" ng-options=" x as x.libelle for x in Nationalite track by x.NationaliteId"></select></td>
+                            <td>
+                                العنوان:
+                            </td>
+                            <td> <input class="form-control"  ng-model="Adresse"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                المدينة:
+                            </td>
+                            <td> <select class="form-control"  ng-model="Vill" ng-options=" x as x.libelle for x in Ville track by x.VilleId"></select></td>
+                            <td>
+                                المهنة:
+                            </td>
+                            <td>  <select class="form-control"  ng-model="Metiee" ng-options=" x as x.libelle for x in Metier track by x.MetierId"></select></td>
+
+
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">الشواهد المحصل عليها:</div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+                            <td>
+                                نوع الشهادة:
+                            </td>
+                            <td> <select class="form-control"  ng-model="Categorii" ng-options=" x as x.libelle for x in Categorie track by x.CategorieId"></select></td>
+                            <td>
+                                التخصص:
+                            </td>
+                            <td> <select class="form-control" ng-model="Specialitt" ng-options=" x as x.libelle for x in Specialite track by x.SpecialiteId"></select></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                السنة المحصل عليها:
+                            </td>
+                            <td> <input class="form-control"  ng-model="Annee"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">المعطيات المهنية:</div>
+                <div class="panel-body">
+                    <table id="tbl">
+                        <tr>
+                            <td>
+                                الهيئة:
+                            </td>
+                            <td> <select class="form-control" ng-model="Barre" ng-options="x.libelle for x in Barreau track by x.BarreauId"></select></td>
+                            <td>
+                                الرقم الوطني:
+                            </td>
+                            <td> <input class="form-control" ng-model="ReferenceNat"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                الدائرة:
+                            </td>
+                            <td> <select class="form-control"  ng-model="Organee" ng-options="x.libelle for x in Organ track by x.OrganId"></select></td>
+                            <td>
+                                الوضعية المهنية:
+                            </td>
+                            <td> <select class="form-control"  ng-model="SituationPPP" ng-options="x.libelle for x in SituationP track by x.SituationPId"></select></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                تاريخ ح ش ا:
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeDA"></td>
+                            <td>
+                                تاريخ ا:
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeAY"></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                مقبول:
+                            </td>
+                            <td>  <select class="form-control"   ng-model="CourCassationn" ng-options="x.libelle for x in CourCassation track by x.CourCassationId"></select></td>
+                            <td>
+                                تاريخ القبول:
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeACC"></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                صفة محامي:
+                            </td>
+                            <td>  <select class="form-control"  ng-model="StatutA" ng-options="x.libelle for x in StatutAH track by x.StatutAHId"></select></td>
+                            <td>
+                                تاريخ الصفة :
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeSt"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                تاريخ سحب الصفة :
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeRSt"></td>
+                            <td>
+                                صفة نقيب:
+                            </td>
+                            <td>  <select class="form-control"   ng-model="StatutCapitainee" ng-options="x.libelle for x in StatutCapitaine track by x.StatutCapitaineId"></selectclass="form-control"></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                تاريخ الصفة :
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeCapitaine"></td>
+
+
+                            <td>
+                                تاريخ سحب الصفة :
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeFinSt"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                مساعد محامي:
+                            </td>
+                            <td> <select class="form-control"  ng-model="AvocatAssistann" ng-options="x.libelle for x in AvocatAssistant track by x.AvocatAssistantId"></select></td>
+                            <td>
+                                اسم محامي:
+                            </td>
+                            <td>  <select class="form-control"  ng-model="NAvocatAssistann" ng-options="x.NomAvocatAss as (x.Nom+' '+ x.Prenom) for x in Avocat track by x.Id"></select></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                مساعد مشارك:
+                            </td>
+                            <td> <select class="form-control"  ng-model="AvocatPa" ng-options="x.libelle for x in AvocatPar track by x.AvocatParId"></select></td>
+                            <td>
+                                اسم محامي:
+                            </td>
+                            <td>  <select class="form-control"  ng-model="NAvocatPa" ng-options="x.NomAvocatPar as (x.Nom+' '+ x.Prenom) for x in Avocat track by x.Id"></select></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                المساكنة:
+                            </td>
+                            <td> <select class="form-control"  ng-model="AvocatCo" ng-options="x.libelle for x in AvocatCoh track by x.AvocatCohId"></select></td>
+                            <td>
+                                اسم محامي:
+                            </td>
+                            <td>  <select class="form-control"   ng-model="NAvocatCo" ng-options="x.NomAvocatCoh as x.Nom+' '+ x.Prenom for x in Avocat track by x.Id"></select></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                شركةالتامين:
+                            </td>
+                            <td> <select class="form-control"  ng-model="Assurancee" ng-options="x.libelle for x in Assurance track by x.AssuranceId"></select></td>
+
+
+                            <td>
+                                اسم محامي:
+                            </td>
+                            <td>  <select class="form-control"  ng-model="NAssurancee" ng-options="x.NomAvocatAssurance as x.Nom+' '+ x.Prenom for x in Avocat track by x.Id"></select></td>
+                        </tr>
+                        <tr>
+
+                            <td> اسم الشركة:</td>
+                            <td><input class="form-control"  ng-model="NomSociete"> </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">فترة التمرين :</div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+
+                            <td>تاريخ بداية التمرين:</td>
+                            <td><input class="form-control"  ng-model="AnneeDebut"> </td>
+                            <td> تاريخ الوقف المؤقت للتمرين:</td>
+                            <td><input  class="form-control"  ng-model="AnneeArret"> </td>
+                        </tr>
+                        <tr>
+
+                            <td> تاريخ استئناف الوقف المؤقت للتمرين:</td>
+                            <td><input class="form-control"  ng-model="AnneeReprendre"> </td>
+                            <td> تاريخ نهاية التمرين:</td>
+                            <td><input class="form-control"  ng-model="AnneeFin"> </td>
+                        </tr>
+                        <tr>
+
+                            <td> تاريخ الحذف من لائحة التمرين:</td>
+                            <td><input class="form-control"   ng-model="AnneeSupp"> </td>
+
+                            <td> المحامي المشرف على التمرين:</td>
+                            <td><select class="form-control"  ng-model="AvocatStagee" ng-options="x.AvocatStage as x.Nom+' '+ x.Prenom for x in Avocat track by x.Id"></selectclass="form-control"> </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">محام عضو في :</div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+                            <td>
+                                التسمية:
+                            </td>
+                            <td>  <select class="form-control"  ng-model="Nominatione" ng-options="x.libelle for x in Nomination track by x.NominationId"></select></td>
+                            <td>
+                                تاريخ العضوية :
+                            </td>
+                            <td> <inputclass="form-control"   ng-model="AnneeMembre"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">متابعة جنائية :</div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+
+                            <td>
+                                رقم الملف بقطب الدعوى العمومية:
+                            </td>
+                            <td> <input class="form-control"  ng-model="NumeroPole"></td>
+                            <td>
+                                المحكمة:
+                            </td>
+                            <td>  <select class="form-control"  ng-model="Juridictionnn" ng-options="x.libelle for x in Juridiction track by x.JuridictionId"></select></td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                رقم الملف :
+                            </td>
+                            <td> <input class="form-control"  ng-model="NumeroDossier"></td>
+                            <td>
+                                التهمة :
+                            </td>
+                            <td> <input class="form-control" ng-model="Accusation"></td>
+                        </tr>
+                        <tr>
+
+
+                            <td>
+                                فصول المتابعة:
+                            </td>
+                            <td> <input class="form-control" ng-model="ChapitreSuivi"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">الجلسات: </div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+
+                            <td>
+                                تاريخ الجلسة:
+                            </td>
+                            <td> <input class="form-control"  ng-model="AnneeAudience"></td>
+                            <td>
+                                القرار :
+                            </td>
+                            <td>  <select class="form-control"  ng-model="Decisionnn" ng-options="x.libelle for x in Decision track by x.DecisionId"></select></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">الحكم / القرار: </div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+
+                            <td>
+                                الحكم أو القرار :
+                            </td>
+                            <td> <input class="form-control"  ng-model="Jugement"></td>
+                            <td>
+                                تاريخ الحكم أو القرار:
+                            </td>
+                            <td> <input class="form-control"  ng-model="DateJugement"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">القرار التأديبي: </div>
+                <div class="panel-body">
+                    <table id="tbl">
+
+                        <tr>
+
+                            <td>
+                                القرار التأديبي :
+                            </td>
+                            <td>  <select class="form-control"  ng-model="Sanctionnn" ng-options="x.libelle for x in Sanction track by x.SanctionId"></select></td>
+                            <td>
+                                تاريخ القرار التأديبي:
+                            </td>
+                            <td> <input  class="form-control"  ng-model="DateSanction"></td>
+                        </tr>
+
+
+
+
+
+
+                    </table>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg" ng-click="updd()">تعديل</button>
+        </div>
+
+    </div>
+
+
+
+   
+
+
+   
+
+
+
+
+
+</body>
+

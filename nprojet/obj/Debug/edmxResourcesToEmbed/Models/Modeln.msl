@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="Database">
+    <EntitySetMapping Name="Assurance">
+      <EntityTypeMapping TypeName="DatabaseModel.Assurance">
+        <MappingFragment StoreEntitySet="Assurance">
+          <ScalarProperty Name="AssuranceId" ColumnName="AssuranceId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audience">
+      <EntityTypeMapping TypeName="DatabaseModel.Audience">
+        <MappingFragment StoreEntitySet="Audience">
+          <ScalarProperty Name="AudienceId" ColumnName="AudienceId" />
+          <ScalarProperty Name="AnneeAudience" ColumnName="AnneeAudience" />
+          <ScalarProperty Name="DecisionId" ColumnName="DecisionId" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvocatAssistant">
+      <EntityTypeMapping TypeName="DatabaseModel.AvocatAssistant">
+        <MappingFragment StoreEntitySet="AvocatAssistant">
+          <ScalarProperty Name="AvocatAssistantId" ColumnName="AvocatAssistantId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvocatAssurance">
+      <EntityTypeMapping TypeName="DatabaseModel.AvocatAssurance">
+        <MappingFragment StoreEntitySet="AvocatAssurance">
+          <ScalarProperty Name="AssuranceId" ColumnName="AssuranceId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvocatCoh">
+      <EntityTypeMapping TypeName="DatabaseModel.AvocatCoh">
+        <MappingFragment StoreEntitySet="AvocatCoh">
+          <ScalarProperty Name="AvocatCohId" ColumnName="AvocatCohId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvocatMembre">
+      <EntityTypeMapping TypeName="DatabaseModel.AvocatMembre">
+        <MappingFragment StoreEntitySet="AvocatMembre">
+          <ScalarProperty Name="AvocatMembreId" ColumnName="AvocatMembreId" />
+          <ScalarProperty Name="NominationId" ColumnName="NominationId" />
+          <ScalarProperty Name="AnneeMembre" ColumnName="AnneeMembre" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvocatPar">
+      <EntityTypeMapping TypeName="DatabaseModel.AvocatPar">
+        <MappingFragment StoreEntitySet="AvocatPar">
+          <ScalarProperty Name="AvocatParId" ColumnName="AvocatParId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Barreau">
+      <EntityTypeMapping TypeName="DatabaseModel.Barreau">
+        <MappingFragment StoreEntitySet="Barreau">
+          <ScalarProperty Name="BarreauId" ColumnName="BarreauId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorie">
+      <EntityTypeMapping TypeName="DatabaseModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="CategorieId" ColumnName="CategorieId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatSanction">
+      <EntityTypeMapping TypeName="DatabaseModel.CatSanction">
+        <MappingFragment StoreEntitySet="CatSanction">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoordonneesProfessionnelles">
+      <EntityTypeMapping TypeName="DatabaseModel.CoordonneesProfessionnelles">
+        <MappingFragment StoreEntitySet="CoordonneesProfessionnelles">
+          <ScalarProperty Name="CoordonneId" ColumnName="CoordonneId" />
+          <ScalarProperty Name="BarreauId" ColumnName="BarreauId" />
+          <ScalarProperty Name="ReferenceNational" ColumnName="ReferenceNational" />
+          <ScalarProperty Name="OrganeId" ColumnName="OrganeId" />
+          <ScalarProperty Name="SituationPId" ColumnName="SituationPId" />
+          <ScalarProperty Name="AnneeDA" ColumnName="AnneeDA" />
+          <ScalarProperty Name="AnneeAY" ColumnName="AnneeAY" />
+          <ScalarProperty Name="CourCassationId" ColumnName="CourCassationId" />
+          <ScalarProperty Name="AnneeACC" ColumnName="AnneeACC" />
+          <ScalarProperty Name="StatutAHId" ColumnName="StatutAHId" />
+          <ScalarProperty Name="AnneeSt" ColumnName="AnneeSt" />
+          <ScalarProperty Name="AnneeRSt" ColumnName="AnneeRSt" />
+          <ScalarProperty Name="StatutCapitaineId" ColumnName="StatutCapitaineId" />
+          <ScalarProperty Name="AnneeCapitaine" ColumnName="AnneeCapitaine" />
+          <ScalarProperty Name="AnneeFinSt" ColumnName="AnneeFinSt" />
+          <ScalarProperty Name="AvocatAssistantId" ColumnName="AvocatAssistantId" />
+          <ScalarProperty Name="NomAvocatAss" ColumnName="NomAvocatAss" />
+          <ScalarProperty Name="AvocatParId" ColumnName="AvocatParId" />
+          <ScalarProperty Name="NomAvocatPar" ColumnName="NomAvocatPar" />
+          <ScalarProperty Name="AvocatCohId" ColumnName="AvocatCohId" />
+          <ScalarProperty Name="NomAvocatCoh" ColumnName="NomAvocatCoh" />
+          <ScalarProperty Name="AssuranceId" ColumnName="AssuranceId" />
+          <ScalarProperty Name="NomSociete" ColumnName="NomSociete" />
+          <ScalarProperty Name="NomAvocatAssurance" ColumnName="NomAvocatAssurance" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourCassation">
+      <EntityTypeMapping TypeName="DatabaseModel.CourCassation">
+        <MappingFragment StoreEntitySet="CourCassation">
+          <ScalarProperty Name="CourCassationId" ColumnName="CourCassationId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Decision">
+      <EntityTypeMapping TypeName="DatabaseModel.Decision">
+        <MappingFragment StoreEntitySet="Decision">
+          <ScalarProperty Name="DecisionId" ColumnName="DecisionId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genre">
+      <EntityTypeMapping TypeName="DatabaseModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="GenreId" ColumnName="GenreId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jugement">
+      <EntityTypeMapping TypeName="DatabaseModel.Jugement">
+        <MappingFragment StoreEntitySet="Jugement">
+          <ScalarProperty Name="Jugementt" ColumnName="Jugementt" />
+          <ScalarProperty Name="JugementId" ColumnName="JugementId" />
+          <ScalarProperty Name="DateJugement" ColumnName="DateJugement" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Juridiction">
+      <EntityTypeMapping TypeName="DatabaseModel.Juridiction">
+        <MappingFragment StoreEntitySet="Juridiction">
+          <ScalarProperty Name="JuridictionId" ColumnName="JuridictionId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="OrganeId" ColumnName="OrganeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Metier">
+      <EntityTypeMapping TypeName="DatabaseModel.Metier">
+        <MappingFragment StoreEntitySet="Metier">
+          <ScalarProperty Name="MetierId" ColumnName="MetierId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nationalite">
+      <EntityTypeMapping TypeName="DatabaseModel.Nationalite">
+        <MappingFragment StoreEntitySet="Nationalite">
+          <ScalarProperty Name="NationaliteId" ColumnName="NationaliteId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nomination">
+      <EntityTypeMapping TypeName="DatabaseModel.Nomination">
+        <MappingFragment StoreEntitySet="Nomination">
+          <ScalarProperty Name="NominationId" ColumnName="NominationId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obtention">
+      <EntityTypeMapping TypeName="DatabaseModel.Obtention">
+        <MappingFragment StoreEntitySet="Obtention">
+          <ScalarProperty Name="ObtentionId" ColumnName="ObtentionId" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+          <ScalarProperty Name="CategorieId" ColumnName="CategorieId" />
+          <ScalarProperty Name="SpecialiteId" ColumnName="SpecialiteId" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partie">
+      <EntityTypeMapping TypeName="DatabaseModel.Partie">
+        <MappingFragment StoreEntitySet="Partie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+          <ScalarProperty Name="LieuNaissance" ColumnName="LieuNaissance" />
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="GenreId" ColumnName="GenreId" />
+          <ScalarProperty Name="NationaliteId" ColumnName="NationaliteId" />
+          <ScalarProperty Name="VilleId" ColumnName="VilleId" />
+          <ScalarProperty Name="MetierId" ColumnName="MetierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoursuiteJuridique">
+      <EntityTypeMapping TypeName="DatabaseModel.PoursuiteJuridique">
+        <MappingFragment StoreEntitySet="PoursuiteJuridique">
+          <ScalarProperty Name="PoursuiteJuridiqueId" ColumnName="PoursuiteJuridiqueId" />
+          <ScalarProperty Name="NumeroPole" ColumnName="NumeroPole" />
+          <ScalarProperty Name="JuridictionId" ColumnName="JuridictionId" />
+          <ScalarProperty Name="NumeroDossier" ColumnName="NumeroDossier" />
+          <ScalarProperty Name="Accusation" ColumnName="Accusation" />
+          <ScalarProperty Name="ChaitreSuivi" ColumnName="ChaitreSuivi" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sanction">
+      <EntityTypeMapping TypeName="DatabaseModel.Sanction">
+        <MappingFragment StoreEntitySet="Sanction">
+          <ScalarProperty Name="SanctionId" ColumnName="SanctionId" />
+          <ScalarProperty Name="DateSanction" ColumnName="DateSanction" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SituationP">
+      <EntityTypeMapping TypeName="DatabaseModel.SituationP">
+        <MappingFragment StoreEntitySet="SituationP">
+          <ScalarProperty Name="SituationPId" ColumnName="SituationPId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialite">
+      <EntityTypeMapping TypeName="DatabaseModel.Specialite">
+        <MappingFragment StoreEntitySet="Specialite">
+          <ScalarProperty Name="SpecialiteId" ColumnName="SpecialiteId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stage">
+      <EntityTypeMapping TypeName="DatabaseModel.Stage">
+        <MappingFragment StoreEntitySet="Stage">
+          <ScalarProperty Name="StageId" ColumnName="StageId" />
+          <ScalarProperty Name="AnneeDebut" ColumnName="AnneeDebut" />
+          <ScalarProperty Name="AnneeArret" ColumnName="AnneeArret" />
+          <ScalarProperty Name="AnneeReprendre" ColumnName="AnneeReprendre" />
+          <ScalarProperty Name="AnneFin" ColumnName="AnneFin" />
+          <ScalarProperty Name="AnneeSupp" ColumnName="AnneeSupp" />
+          <ScalarProperty Name="AvocatStageId" ColumnName="AvocatStageId" />
+          <ScalarProperty Name="PartieId" ColumnName="PartieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatutAH">
+      <EntityTypeMapping TypeName="DatabaseModel.StatutAH">
+        <MappingFragment StoreEntitySet="StatutAH">
+          <ScalarProperty Name="StatutAHId" ColumnName="StatutAHId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatutCapitaine">
+      <EntityTypeMapping TypeName="DatabaseModel.StatutCapitaine">
+        <MappingFragment StoreEntitySet="StatutCapitaine">
+          <ScalarProperty Name="StatutCapitaineId" ColumnName="StatutCapitaineId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table">
+      <EntityTypeMapping TypeName="DatabaseModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="SituationPId" ColumnName="SituationPId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ville">
+      <EntityTypeMapping TypeName="DatabaseModel.Ville">
+        <MappingFragment StoreEntitySet="Ville">
+          <ScalarProperty Name="VilleId" ColumnName="VilleId" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,576 @@
+﻿
+@{
+    ViewBag.Title = "Postt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+
+
+
+</head>
+<body class="container" ng-app="Homeapp" id="bd">
+    <div ng-controller='HomeController'>
+        <div id="demo">
+            <br />
+                
+            <div id="tbl">
+                <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#1">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                </button> 
+                <span id="lbl">المعطيات الشخصية:</span>
+                <div id="1" class="collapse">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">المرجو إدخال المعلومات اللازمة </div>
+                    <div class="panel-body">
+
+                        <form>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+
+                                    <label class="control-label">الاسم العائلي :</label>
+                                    <input class=" form-control " ng-model="Nom">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label class=" control-label">
+                                        الاسم الشخصي:
+                                    </label>
+                                    <input class="form-control " ng-model="Prenom">
+                                </div>
+
+                                
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">
+                                            تاريخ الازدياد:
+                                        </label>
+                                        <input class="form-control" type="date" ng-model="DateNaissance">
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">
+                                            مكان الازدياد:
+                                        </label>
+                                        <input class="form-control" ng-model="LieuNaissance">
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+
+                                        <label class="control-label">
+                                            الجنس:
+                                        </label>
+                                        <select class="form-control" ng-model="Genr" ng-options="x.libelle for x in Genre"></select>
+                                    </div>
+                                   
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">رقم البطاقة الوطنية :</label>
+                                        <input class="form-control" ng-model="Cin"><br />
+
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">
+                                            الجنسية:
+                                        </label>
+                                        <select class="form-control" ng-model="Nat" ng-options="x.libelle for x in Nationalite"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">
+                                            العنوان:
+                                        </label>
+                                        <input class="form-control" ng-model="Adresse"><br />
+
+                                    </div>
+                                    <div class="form-group col-md-4">
+
+                                        <label class="control-label">
+                                            المدينة:
+                                        </label>
+                                        <select class="form-control" ng-model="Vil" ng-options="x.libelle for x in Ville"></select>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4 ">
+                                            <label class="control-label">
+                                                المهنة:
+                                            </label>
+                                            <select class="form-control " ng-model="Metie" ng-options="x.libelle for x in Metier"></select>
+
+                                        </div>
+                                        </div>
+                                </div>
+                        </form>
+                    </div>
+                    </div>
+
+                    </div>
+                </div>
+                
+                <div id="tbl">
+                 <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#2">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                 </button>
+                <span id="lbl">الشواهد المحصل عليها :</span>
+                <div id="2" class="collapse">
+
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+
+                                <div class="panel-body">
+                                    
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+
+                                                    <label class="control-label">
+                                                        نوع الشهادة:
+                                                    </label>
+                                                    <select class="form-control" ng-model="Categori" ng-options="x.libelle for x in Categorie"></select>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label class="control-label">
+                                                        التخصص:
+                                                    </label>
+                                                    <select class="form-control" ng-model="Specialit" ng-options="x.libelle for x in Specialite"></select>
+                                                    <br />
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label class="control-label">
+                                                        السنة المحصل عليها:
+                                                    </label>
+                                                    <input type="date" class="form-control col-md-4" ng-model="Annee"><br />
+
+
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                
+                <div id="tbl">
+                 <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#3">
+                 <span class="glyphicon glyphicon-chevron-left"></span>
+                 </button>
+                <span id="lbl">المعطيات المهنية: </span>
+                 <div id="3" class="collapse">
+                 <div class="panel panel-primary">
+                                        <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+
+                                        <div class="panel-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+
+                                                        <label class="control-label">
+                                                            الهيئة:
+                                                        </label>
+                                                        <select class="form-control" ng-model="Barreauu" ng-options="x.libelle for x in Barreau"></select>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            الرقم الوطني:
+                                                        </label>
+                                                        <input class="form-control" ng-model="ReferenceNat">
+                                                    </div>
+
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            الدائرة:
+                                                        </label>
+                                                        <select class="form-control" ng-model="Organn" ng-options="x.libelle for x in Organ"></select>
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            الوضعية المهنية:
+                                                        </label>
+                                                        <select class="form-control" ng-model="SituationPP" ng-options="x.libelle for x in SituationP"></select>
+
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            تاريخ ح ش ا:
+                                                        </label>
+                                                        <input  type="date" class="form-control" ng-model="AnneeDA">
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            تاريخ ا:
+                                                        </label>
+                                                        <input type="date" class="form-control" ng-model="AnneeAY">
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            مقبول:
+                                                        </label>
+                                                        <select class="form-control" ng-model="CourCass" ng-options="x.libelle for x in CourCassation"></select>
+
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label" ng-if="CourCass.libelle=='نعم'">
+                                                            تاريخ القبول:
+                                                        </label>
+
+                                                        <input type="date" class="form-control" ng-model="AnneeACC" ng-if="CourCass.libelle=='نعم'">
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+
+                                                        <label class="control-label">
+                                                            صفة محامي:
+                                                        </label>
+                                                        <select class="form-control" ng-model="StatutAHH" ng-options="x.libelle for x in StatutAH"></select>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label" ng-if="StatutAHH.libelle=='نعم'">
+                                                            تاريخ الصفة :
+                                                        </label>
+                                                        <input  type="date" class="form-control" ng-model="AnneeSt" ng-if="StatutAHH.libelle=='نعم'">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label" ng-if="StatutAHH.libelle=='نعم'">
+                                                            تاريخ سحب الصفة :
+                                                        </label>
+                                                        <input type="date" class="form-control" ng-model="AnneeRSt" ng-if="StatutAHH.libelle=='نعم'">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            صفة نقيب:
+                                                        </label>
+                                                        <select class="form-control" ng-model="StatutCap" ng-options="x.libelle for x in StatutCapitaine"></select>
+                                                        <br />
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label" ng-if="StatutCap.libelle=='نعم'">
+                                                            تاريخ الصفة :
+                                                        </label>
+                                                        <input type="date" class="form-control" ng-model="AnneeCapitaine" ng-if="StatutCap.libelle=='نعم'">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label" ng-if="StatutCap.libelle=='نعم'">
+                                                            تاريخ سحب الصفة :
+                                                        </label>
+                                                        <input type="date" class="form-control" ng-model="AnneeFinSt" ng-if="StatutCap.libelle=='نعم'">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            مساعد محامي:
+                                                        </label>
+                                                        <select class="form-control" ng-model="AvocatAssistan" ng-options="x.libelle for x in AvocatAssistant"></select>
+                                                       </div>
+
+                                                    <div class="form-group col-md-4">   
+                                                    <label class="control-label">
+                                                            اسم محامي:
+                                                        </label>
+                                                        <select class="form-control" ng-model="Avocata" ng-options="x.Id as x.Nom+' '+ x.Prenom for x in Avocat"></select>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            مساعد مشارك:
+                                                        </label>
+                                                        <select class="form-control" ng-model="AvocatParr" ng-options="x.libelle for x in AvocatPar"></select>
+                                                        </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            اسم محامي:
+                                                        </label>
+                                                        <select class="form-control" ng-model="Avocatp" ng-options="x.Id as x.Nom+' '+ x.Prenom for x in Avocat"></select>
+                                                        <br />
+                                                    </div>
+                                                    
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">
+                                                            المساكنة:
+                                                        </label>
+                                                        <select class="form-control" ng-model="AvocatCohh" ng-options="x.libelle for x in AvocatCoh"></select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label class="control-label">
+                                                                اسم محامي:
+                                                            </label>
+                                                            <select class="form-control" ng-model="Avocatc" ng-options="x.Id as x.Nom+' '+ x.Prenom for x in Avocat"></select>
+                                                            <br />
+                                                        </div>
+                                                    
+                                                        <div class="form-group col-md-4">
+                                                            <label class="control-label">
+                                                                شركةالتامين:
+                                                            </label>
+                                                            <select class="form-control" ng-model="Assuranc" ng-options="x.libelle for x in Assurance"></select>
+                                                            </div>
+                                                            
+                                                    <div class="form-group col-md-4">
+                                                    <label class="control-label">
+                                                                اسم محامي:
+                                                            </label>
+                                                            <select class="form-control" ng-model="Avocats" ng-options="x.Id as x.Nom+' '+ x.Prenom for x in Avocat"></select>
+                                                            <br />
+                                                        </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label"> اسم الشركة:</label>
+                                                        <input class="form-control" ng-model="NomSociete">
+                                                        
+                                                    </div>
+                                                    </div>
+
+                                             </form>
+                                        </div>
+                                    </div>
+                     </div>
+                 <br />
+                 
+                    <div id="tbl">
+                   <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#4">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                   <span id="lbl">فترة التمرين : </span>
+                   <div id="4" class="collapse">
+                       <div class="panel panel-primary">
+                           <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+
+                           <div class="panel-body">
+                               
+                               <form>
+                                   <div class="form-row">
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label">تاريخ بداية التمرين:</label>
+                                           <input type="date" class="form-control" ng-model="AnneeDebut">
+                                       </div>
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label"> تاريخ الوقف المؤقت للتمرين:</label>
+                                           <input type="date" class="form-control" ng-model="AnneeArret"><br />
+                                       </div>
+
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label"> تاريخ استئناف الوقف المؤقت للتمرين:</label>
+                                           <input type="date" class="form-control" ng-model="AnneeReprendre">
+                                       </div>
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label"> تاريخ نهاية التمرين:</label>
+                                           <input type="date" class="form-control" ng-model="AnneeFin"><br />
+
+                                       </div>
+
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label"> تاريخ الحذف من لائحة التمرين:</label>
+                                           <input type="date" class="form-control" ng-model="AnneeSupp">
+                                       </div>
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label"> المحامي المشرف على التمرين:</label>
+                                           <select class="form-control" ng-model="AvocatStagee" ng-options="x.Id as x.Nom+' '+ x.Prenom for x in Avocat"></select>
+
+                                       </div>
+
+                                </div>
+                               </form>
+                               </div>
+                       </div> 
+                       </div>
+                       
+                   <div id="tbl">
+                       <button type="button" class="btn btn-primary btn-xs" data-toggle="collapse" data-target="#5">
+                           <span class="glyphicon glyphicon-chevron-left"></span>
+                       </button>
+                       <span id="lbl">محام عضو في : </span>
+                       <div id="5" class="collapse">
+                           <div class="panel panel-primary">
+                               <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+                               <div class="panel-body">
+                                   <form>
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label">
+                                               التسمية:
+                                           </label>
+                                           <select class="form-control" ng-model="Nominationn" ng-options="x.libelle for x in Nomination"></select>
+                                       </div>
+
+                                       <div class="form-group col-md-4">
+                                           <label class="control-label">
+                                               تريخ العضوية :
+                                           </label>
+                                           <input  type="date" class="form-control" ng-model="AnneeMembre">
+
+                                       </div>
+
+                                   </form>
+                               </div>
+                           </div>
+                       </div>
+
+                       <div id="tbl">
+                           <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#6">
+                               <span class="glyphicon glyphicon-chevron-left"></span>
+                           </button>
+
+                           <span id="lbl">متابعة جنائية : </span>
+                           <div id="6" class="collapse">
+                               <div class="panel panel-primary">
+                                   <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+                                   <div class="panel-body">
+                                       <form>
+                                           <div class="form-group col-md-4">
+                                               <label class="control-label">
+                                                   رقم الملف بقطب الدعوى العمومية:
+                                               </label>
+                                               <input class="form-control" ng-model="NumeroPole">
+                                           </div>
+                                           <div class="form-group col-md-4">
+                                               <label class="control-label">
+                                                   المحكمة:
+                                               </label>
+                                               <select class="form-control" ng-model="Juridictionn" ng-options="x.libelle for x in Juridiction"></select>
+
+                                           </div>
+
+                                           <div class="form-group col-md-4">
+
+                                               <label class="control-label">
+                                                   رقم الملف :
+                                               </label>
+                                               <input class="form-control" ng-model="NumeroDossier">
+                                           </div>
+
+                                           <div class="form-group col-md-4">
+                                               <label class="control-label">
+                                                   التهمة :
+                                               </label>
+                                               <input class="form-control" ng-model="Accusation"><br />
+
+                                           </div>
+                                           <div class="form-group col-md-4">
+                                               <label class="control-label">
+                                                   فصول المتابعة:
+                                               </label>
+                                               <input class="form-control" ng-model="ChapitreSuivi">
+                                              
+                                           </div>
+
+                                       </form>
+                                   </div>
+                               </div> 
+                               </div>
+
+                           <div id="tbl">
+                               <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#7">
+                                   <span class="glyphicon glyphicon-chevron-left"></span>
+                               </button>
+                               <span id="lbl">الجلسات: </span>
+                               <div id="7" class="collapse">
+                                   <div class="panel panel-primary">
+                                       <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+                                       <div class="panel-body">
+                                           <form>
+
+                                               <div class="form-group col-md-4">
+                                                   <label class="control-label">
+                                                       تاريخ الجلسة:
+                                                   </label>
+
+                                                   <input type="date" class="form-control" ng-model="AnneeAudience">
+                                               </div>
+                                               <div class="form-group col-md-4">
+                                                   <label class="control-label">
+                                                       القرار :
+                                                   </label>
+
+                                                   <select class="form-control" ng-model="Decisionn" ng-options="x.libelle for x in Decision"></select><br /><br />
+                                               </div>
+
+                                           </form>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div id="tbl">
+
+                                   <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#8">
+                                       <span class="glyphicon glyphicon-chevron-left"></span>
+                                   </button>
+
+                                   <span id="lbl">الحكم / القرار: </span>
+                                   <div id="8" class="collapse">
+                                       <div class="panel panel-primary">
+                                           <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+                                           <div class="panel-body">
+                                               <form>
+                                                   <div class="form-group col-md-4">
+
+                                                       <label class="control-label">
+                                                           الحكم أو القرار :
+                                                       </label>
+                                                       <input class="form-control" ng-model="Jugement">
+                                                   </div>
+                                                   <div class="form-group col-md-4">
+
+                                                       <label class="control-label">
+                                                           تاريخ الحكم أو القرار:
+                                                       </label>
+                                                       <input type="date" class="form-control" ng-model="DateJugement"><br /><br />
+                                                   </div>
+
+                                               </form>
+                                           </div>
+                                       </div>
+                                   </div>
+
+                                   <div id="tbl">
+
+                                       <button type="button" class="btn-primary btn-xs" data-toggle="collapse" data-target="#9">
+                                           <span class="glyphicon glyphicon-chevron-left"></span>
+                                       </button>
+                                       <span id="lbl">القرار التأديبي: </span>
+                                       <div id="9" class="collapse">
+                                           <div class="panel panel-primary">
+                                               <div class="panel-heading">المرجو إدخال المعلومات اللازمة</div>
+                                               <div class="panel-body">
+                                                   <form>
+
+                                                       <div class="form-group col-md-4">
+                                                           <label class="control-label">
+                                                               القرار التأديبي :
+                                                           </label>
+                                                           <select class="form-control" ng-model="Sanctionn" ng-options="x.libelle for x in Sanction"></select>
+                                                       </div>
+                                                       <div class="form-group col-md-4">
+                                                           <label class="control-label">
+                                                               تاريخ القرار التأديبي:
+                                                           </label>
+                                                           <input type="date" class="form-control" ng-model="DateSanction">
+
+
+                                                       </div>
+
+
+                                                   </form>
+                                               </div>
+                                           </div>
+
+                                       </div>
+
+
+                                   </div>
+                               </div>
+
+                               <button type="submit" class="btn btn-primary btn-lg" ng-click="addperson()">اضافة</button>
+
+
+
+
+</div>
+                           </div>
+</body>
+
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="403f6e7fcb684344a38159cee8b9a2d5" Name="Diagram1" ZoomLevel="53">
+        <EntityTypeShape EntityType="DatabaseModel.Assurance" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Audience" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AvocatAssistant" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AvocatAssurance" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AvocatCoh" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AvocatMembre" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AvocatPar" Width="1.5" PointX="6" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Barreau" Width="1.5" PointX="6" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Categorie" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.CatSanction" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.CoordonneesProfessionnelles" Width="1.5" PointX="8.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.CourCassation" Width="1.5" PointX="6" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Decision" Width="1.5" PointX="3" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Genre" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Jugement" Width="1.5" PointX="5.25" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Juridiction" Width="1.5" PointX="6" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Metier" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Nationalite" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Nomination" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Obtention" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Partie" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.PoursuiteJuridique" Width="1.5" PointX="11.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Sanction" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.SituationP" Width="1.5" PointX="6" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Specialite" Width="1.5" PointX="3" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Stage" Width="1.5" PointX="5.25" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.StatutAH" Width="1.5" PointX="6" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.StatutCapitaine" Width="1.5" PointX="6" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Table" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Ville" Width="1.5" PointX="0.75" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK_assurance" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_AudiENCEDec" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_AudiENCEPar" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_assist" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_coh" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Nomination" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_PartieM" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_par" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_barr" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Categorie" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Sanction" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_ah" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_cap" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_cass" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_organ" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_partieC" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_partieCassistant" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_partieCassurance" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_partieCcohabitation" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_partieCparticipant" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_sit" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_genre" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Jugement_Partie" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_PoursuiteJur" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_metier" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_nationalite" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Partie" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Specialite" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_PartieS" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_PartieSA" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_PoursuitePartie" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Sanction_partie" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_ville" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

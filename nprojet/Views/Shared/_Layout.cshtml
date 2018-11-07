@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <script src="~/Scripts/angular.min.js"></script>
+
+
+    <script src="~/Scripts/AngController/controller.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-rtl.css" rel="stylesheet" />
+
+    <link href="~/Content/fonts/Mystyle.css" rel="stylesheet" />
+
+
+</head>
+<body class="container">
+    <!--Navbar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header  ">
+                <button class=" navbar-toggle  collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+
+
+
+                </button>
+
+
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                
+                <ul class="nav navbar-nav navbar">
+                    <li>
+                        <img id="imag" src="~/Content/fonts/marocc.png">
+                    </li>
+                    @Html.Partial("_LoginPartial")
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container">
+         <div class="row">
+                  @RenderBody()
+              </div>
+                     </div>
+    
+
+
+
+    <!--footer-->
+
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
